@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gabriel y Camila</title>
+  <link rel="stylesheet" href="felicidades.css">
+</head>
+
+<body>
+  
+  <!--Audio de fondo-->
+
+<div class="audio">
+
+    <audio controls loop id="miMusica" src="musica1.mp3" preload="auto"></audio>
+
+
+    <script>
+        // Función para reproducir música
+        function reproducirMusica() {
+            const musica = document.getElementById('miMusica');
+            musica.play();
+        }
+
+        // Escuchar el primer clic en el documento
+        document.addEventListener('click', () => {
+            reproducirMusica();
+            // Eliminar el oyente para evitar múltiples llamadas
+            document.removeEventListener('click', arguments.callee);
+        });
+    </script>
+    
+    
+</div>
+  
+  <h1 class="titulo">¡MI AMOR!</h1>
+  <p class="text">
+  "Texto 1 #########################################."
+</p>
+
+
+    <div class="carta">
+        <h1>¡Mi amor!</h1>
+        <p>"text 2 ##########################"</p>
+        <p>¡TEXTO 2.1 $################!</p>
+        <button onclick="mostrarMensaje0()">Mostrar Mensaje</button>
+    </div>
+
+    <script>
+        function mostrarMensaje0() {
+            alert('"MENSAJE OCULTO!".');
+        }
+    </script>
+    
+    
+    <br>
+    
+    
+    <div class="carta">
+      <h1>¡Mi bebé!</h1>
+      <p>"TEXTO 3 #####################."</p>
+      <button onclick="mostrarMensaje1()">Ver Mensaje</button>
+    
+    </div>
+
+    <script>
+      function mostrarMensaje1() {
+        alert("TEXTO 4 ########################.");
+      }
+    </script>
+    
+    <br>
+    
+    
+    <div class="carta">
+      <h1>¡Mi amor!</h1>
+      <p>"TEXTO 5 ######################"</p>
+  
+      <button id="mostrarImagenBtn">Ver Imagen</button>
+      
+        <div id="imagenContainer" class="ocultar">
+      
+          <img class="img1" src="img1.jpg" alt="Imagen" id="imagen">
+          <img class="img1" src="img2.jpg" alt="Imagen" id="imagen">
+      
+          
+          <script src="script.js"></script>
+          
+
+        </div>
+        
+    </div>
+
+<style>
+      #imagenContainer {
+        margin-top: 20px;
+      }
+
+      .ocultar {
+        display: none;
+      }
+      
+      
+      .img1{
+        width: auto;
+        height: 250px;
+        border-radius: 7%;
+      }
+      
+    </style>
+
+    <script>
+      document.getElementById('mostrarImagenBtn').addEventListener('click', function() {
+        const imagenContainer = document.getElementById('imagenContainer');
+
+        // Alternar la visibilidad de la imagen
+        if (imagenContainer.classList.contains('ocultar')) {
+          imagenContainer.classList.remove('ocultar');
+          this.textContent = 'Ocultar Imagen';
+        } else {
+          imagenContainer.classList.add('ocultar');
+          this.textContent = 'Mostrar Imagen';
+          
+        }
+      });
+    </script>
+        
+<br>
+
+<footer>
+  <h1 class="text2">🥰🥰MI AMOR🥰🥰</h1>
+  
+
+</footer>
+
+
+</body>
+</html>
+
