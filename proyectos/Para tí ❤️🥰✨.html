@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti, Mi Amor</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+	<style>
+	@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap');
+
+:root {
+    --rosa-claro: #ffd6e8;
+    --rosa: #ff9bb8;
+    --rosa-profundo: #e75480;
+    --violeta: #c9a0dc;
+    --fondo: #1a0a1a;
+    --borde: rgba(255, 182, 193, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--rosa-claro);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.8;
+}
+
+.carta {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+.seccion {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.seccion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--rosa);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.titulo::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--rosa-profundo), transparent);
+}
+
+.mensaje {
+    font-size: clamp(1.1rem, 3vw, 1.2rem);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: var(--rosa-claro);
+}
+
+.rosas {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin: 2rem auto;
+    border: 1px solid var(--borde);
+    box-shadow: 0 10px 30px rgba(231, 84, 128, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.rosas:hover {
+    transform: scale(1.03) rotate(-1deg);
+}
+
+.corazon {
+    font-size: 2.5rem;
+    margin: 1.5rem 0;
+    color: var(--rosa-profundo);
+    animation: latido 1.5s infinite;
+}
+
+@keyframes latido {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.flotantes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.petalo {
+    position: absolute;
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: caer 8s linear forwards;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.final {
+    background: rgba(255, 182, 193, 0.05);
+    border: 1px solid var(--borde);
+    border-radius: 15px;
+    padding: 3rem;
+    backdrop-filter: blur(5px);
+    margin: 3rem auto;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(231, 84, 128, 0.1);
+}
+
+.firma {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--violeta);
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .carta {
+        padding: 3rem 1.5rem;
+    }
+
+    .final {
+        padding: 2rem;
+    }
+}
+	</style>
+</head>
+<body>
+    <div class="carta">
+        <section class="seccion">
+            <h1 class="titulo">Mi niña bonita</h1>
+            <img src="https://bcodestorague.anteroteobaldob.workers.dev/share/anteroteobaldob_gmail_com/GIF/gatito.gif" alt="Rosas para ti" class="rosas">
+            <p class="mensaje">Que este día esté lleno de la misma dulzura que tú llevas en el alma. Eres mi razón para sonreír cada mañana.</p>
+            <div class="corazon">❤️</div>
+        </section>
+
+        <section class="seccion">
+            <h2 class="titulo">Eres mi luz</h2>
+            <p class="mensaje">Como estas rosas, tu belleza no solo está en lo que se ve, sino en la esencia que ilumina todo a tu alrededor. Que hoy la vida te regale momentos tan especiales como tú.</p>
+            <div class="corazon">❤️</div>
+        </section>
+
+        <section class="seccion">
+            <h2 class="titulo">Para ti, princesa</h2>
+            <p class="mensaje">Espero que hoy encuentres razones para brillar, porque el mundo es más hermoso cuando estás feliz. Eres increíble, valiosa y linda.</p>
+            <div class="corazon">❤️</div>
+        </section>
+        
+        <section class="seccion">
+            <div class="final">
+                <h2 class="titulo">Con todo mi cariño</h2>
+                <p class="mensaje">Que cada amanecer te recuerde lo especial que eres. No hay jardín más bello que el de tu corazón, y no hay flor más perfecta que tu sonrisa.</p>
+                <div class="corazon">❤️</div>
+                <p class="firma">Para ti mi princesita ❤️</p>
+            </div>
+        </section>
+    </div>
+    
+    <div class="flotantes"></div>
+    
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const audioPlayer = new Audio();
+    audioPlayer.src = 'https://bcodestorague.anteroteobaldob.workers.dev/share/anteroteobaldob_gmail_com/AUDIO/those%20eyes%20.mp3';
+    audioPlayer.loop = true;
+    audioPlayer.volume = 0.3;
+    let musicStarted = false;
+
+    const startMusic = () => {
+        if (!musicStarted) {
+            audioPlayer.play().catch(e => console.log(e));
+            musicStarted = true;
+        }
+    };
+
+    window.addEventListener('scroll', () => {
+        startMusic();
+    });
+
+    document.addEventListener('click', () => {
+        startMusic();
+    });
+
+    const createHeart = (x, y) => {
+        const heart = document.createElement('div');
+        heart.innerHTML = '❤️';
+        heart.style.position = 'fixed';
+        heart.style.left = `${x}px`;
+        heart.style.top = `${y}px`;
+        heart.style.fontSize = `${Math.random() * 20 + 15}px`;
+        heart.style.transform = 'translate(-50%, -50%)';
+        heart.style.pointerEvents = 'none';
+        heart.style.zIndex = '9999';
+        heart.style.opacity = '0.9';
+        heart.style.animation = `heart-fly ${Math.random() * 3 + 2}s linear forwards`;
+        
+        document.head.insertAdjacentHTML('beforeend', `
+            <style>
+                @keyframes heart-fly {
+                    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+                    100% { transform: translate(-50%, -150%) scale(0.5); opacity: 0; }
+                }
+            </style>
+        `);
+        
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 2000);
+    };
+
+    const createHeartExplosion = (x, y) => {
+        for (let i = 0; i < 15; i++) {
+            setTimeout(() => {
+                const offsetX = (Math.random() - 0.5) * 100;
+                const offsetY = (Math.random() - 0.5) * 100;
+                createHeart(x + offsetX, y + offsetY);
+            }, i * 50);
+        }
+    };
+
+    document.addEventListener('click', (e) => {
+        createHeartExplosion(e.clientX, e.clientY);
+    });
+
+    document.addEventListener('touchstart', (e) => {
+        Array.from(e.touches).forEach(touch => {
+            createHeartExplosion(touch.clientX, touch.clientY);
+        });
+    });
+
+    const secciones = document.querySelectorAll('.seccion');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('visible'));
+    }, { threshold: 0.1 });
+
+    secciones.forEach(seccion => observer.observe(seccion));
+
+    function crearPetalos() {
+        const colores = ['#ff9bb8', '#e75480', '#c9a0dc', '#ffd6e8'];
+        const contenedor = document.querySelector('.flotantes');
+        
+        for (let i = 0; i < 12; i++) {
+            setTimeout(() => {
+                const petalo = document.createElement('div');
+                petalo.classList.add('petalo');
+                petalo.innerHTML = '❀';
+                petalo.style.left = `${Math.random() * 100}vw`;
+                petalo.style.color = colores[Math.floor(Math.random() * colores.length)];
+                petalo.style.fontSize = `${Math.random() * 1 + 1}rem`;
+                petalo.style.animationDuration = `${Math.random() * 3 + 5}s`;
+                contenedor.appendChild(petalo);
+                setTimeout(() => petalo.remove(), 8000);
+            }, i * 500);
+        }
+    }
+
+    crearPetalos();
+    setInterval(crearPetalos, 6000);
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            audioPlayer.pause();
+        } else if (audioPlayer.paused) {
+            audioPlayer.play();
+        }
+    });
+});
+</script>
+
+    
+<!-- BOTÓN FLOTANTE PERSONALIZAR -->
+<div id="editBtn">
+  <!-- ICONO LÁPIZ SVG -->
+  <svg viewBox="0 0 24 24" fill="none">
+    <path d="M3 17.25V21h3.75L17.8 9.94l-3.75-3.75L3 17.25z"
+      fill="currentColor"/>
+    <path d="M20.7 7.04a1 1 0 000-1.41L18.37 3.3a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.82-1.84z"
+      fill="currentColor"/>
+  </svg>
+</div>
+
+<!-- MODAL PERSONALIZAR -->
+<div class="edit-modal hidden" id="editModal">
+  <div class="edit-modal-content">
+    <span class="edit-close" id="editClose">✕</span>
+    <h3>¿Desea personalizar?</h3>
+    <button id="editGo">Editar / Código</button>
+  </div>
+</div>
+<style>
+    /* ======================
+   BOTÓN FLOTANTE
+====================== */
+#editBtn {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #00e5ff, #00bcd4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 0 25px rgba(0,229,255,.7);
+  transition: all .3s ease;
+}
+
+#editBtn:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 0 35px #00e5ff;
+}
+
+#editBtn svg {
+  width: 26px;
+  height: 26px;
+  color: #00131a;
+}
+
+/* ======================
+   MODAL
+====================== */
+.edit-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.edit-modal.hidden {
+  display: none;
+}
+
+.edit-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 300px;
+  background: linear-gradient(160deg, #0c1627, #050b14);
+  border-radius: 18px;
+  padding: 22px;
+  text-align: center;
+  animation: editIn .35s ease;
+  box-shadow: 0 0 30px rgba(0,229,255,.4);
+}
+
+@keyframes editIn {
+  from {
+    transform: scale(.7) translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.edit-modal-content h3 {
+  margin-bottom: 16px;
+  color: #eaf6ff;
+  font-size: 1.1rem;
+}
+
+/* ======================
+   BOTÓN MODAL
+====================== */
+.edit-modal-content button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  background: linear-gradient(45deg, #00e5ff, #00bcd4);
+  color: #00131a;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.edit-modal-content button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px #00e5ff;
+}
+
+/* ======================
+   CERRAR
+====================== */
+.edit-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  cursor: pointer;
+  color: #9bb3c7;
+  font-size: 1.1rem;
+}
+
+.edit-close:hover {
+  color: #00e5ff;
+}
+
+</style>
+<script>
+  const editBtn = document.getElementById("editBtn");
+  const editModal = document.getElementById("editModal");
+  const editClose = document.getElementById("editClose");
+  const editGo = document.getElementById("editGo");
+
+  // CONFIGURA AQUÍ LA URL
+  const EDIT_URL = "https://tu-url-de-edicion-o-codigo.com";
+
+  editBtn.onclick = () => {
+    editModal.classList.remove("hidden");
+  };
+
+  editClose.onclick = () => {
+    editModal.classList.add("hidden");
+  };
+
+  editModal.onclick = e => {
+    if (e.target === editModal) {
+      editModal.classList.add("hidden");
+    }
+  };
+
+  editGo.onclick = () => {
+    window.open(EDIT_URL, "_blank");
+    editModal.classList.add("hidden");
+  };
+</script>
+
+  
+</html>
