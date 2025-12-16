@@ -6,7 +6,7 @@
     "imagen": "img/img1.webp",
     "precio_bs": 5,
     "precio_usd": 1.5,
-    "url": "https://jd-code.github.io/catalogo/corazon-particulas.html",
+    "url": "https://jackdainor.github.io/JD-CODE/proyectos/Parati.html",
     "premium": false
 
   },
@@ -17,6 +17,7 @@
     "imagen": "img/carta.webp",
     "precio_bs": 5,
     "precio_usd": 1.5,
+    "url": "https://jackdainor.github.io/JD-CODE/proyectos/carta.html",
     "premium": false
   },
   {
@@ -26,6 +27,7 @@
     "precio_bs": 5,
     "precio_usd": 1.5,
     "premium": false,
+    "url": "https://jackdainor.github.io/JD-CODE/proyectos/Pressheart.html",
     "imagen": "img/pressheart.webp"
   },
   {
@@ -35,6 +37,7 @@
     "precio_bs": 5,
     "precio_usd": 1.5,
     "premium": false,
+    "url": "https://jackdainor.github.io/JD-CODE/proyectos/lluviateamo.html",
     "imagen": "img/lluviateamo.webp"
   },
   {
@@ -44,6 +47,7 @@
     "precio_bs": 7,
     "precio_usd": 1.7,
     "premium": true,
+    "url": "https://jackdainor.github.io/JD-CODE/proyectos/floresamarillas.html",
     "imagen": "img/floresamarillas.webp"
   }
   
