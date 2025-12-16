@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JD-CODE | Personalización</title>
+  <meta name="theme-color" content="#6a00ff" />
+  <link rel="stylesheet" href="style-personalizar.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+
+<!-- FONDO DE PARTÍCULAS -->
+<canvas id="particles"></canvas>
+
+<!-- HEADER -->
+<header class="top-bar">
+  <div class="left-actions">
+    <button class="icon-btn" onclick="location.href='index.html'">🏠</button>
+    <button class="icon-btn" onclick="location.href='catalogo.html'">🛒</button>
+    <button class="icon-btn active">🎨</button>
+  </div>
+  <h1 class="logo">JD-CODE</h1>
+</header>
+
+<main class="container">
+
+<!-- SECCIÓN 1: INFO PERSONALIZACIONES -->
+<section class="glass">
+  <h2 class="neon-title">PERSONALIZACIONES A MEDIDA</h2>
+  <p class="text-center">
+    ¿Te gusta un código pero quieres que sea único para ti?
+    Con el servicio de personalización puedo adaptar cualquiera de los códigos disponibles
+    para que se ajuste a tu ocasión (cumpleaños, aniversarios, eventos especiales, etc.).
+  </p>
+</section>
+
+<!-- INCLUYE PERSONALIZACIÓN -->
+<section class="glass include-section">
+  <h2 class="section-title">¿Qué incluye la personalización? ✨</h2>
+
+  <p class="include-desc">
+    La personalización consiste en adaptar un código existente para que sea
+    único y especial para ti, según tu ocasión o necesidad.
+  </p>
+
+  <ul class="include-list">
+    <li>🎨 Cambio de colores y estilos visuales</li>
+    <li>📝 Reemplazo de textos, música y mensajes</li>
+    <li>🖼️ Sustitución de imágenes o fondos</li>
+    <li>💻 Ajustes en el código según tu pedido</li>
+    <li>🌐 Link permanente en la web (no necesitas descargar archivos)</li>
+  </ul>
+</section>
+
+
+<!-- SECCIÓN 2: PERSONALIZACIÓN SIMPLE -->
+<section class="glass">
+  <h2 class="section-title">Personalización Simple 🎨</h2>
+
+  <div class="price-list">
+    <div class="price-row">🇧🇴 Bolivia <span>9 bs</span></div>
+    <div class="price-row">🌍 Otros países <span>2.5 USD</span></div>
+  </div>
+
+  <button class="primary-btn">
+    PEDIR PERSONALIZACIÓN
+  </button>
+
+  <h3 class="sub-title">Códigos disponibles</h3>
+
+  <div class="list">
+    <div class="list-item">❤️ Press Heart <button onclick="pedir('Press Heart')">PEDIR</button></div>
+    <div class="list-item">✨ Carta <button onclick="pedir('Atardecer Estrellado')">PEDIR</button></div>
+    <div class="list-item">❤️ Para ti <button onclick="pedir('Corazón Simple')">PEDIR</button></div>
+    <div class="list-item">❤️ lluvia de te amo <button onclick="pedir('Flores')">PEDIR</button></div>
+    
+  </div>
+</section>
+
+<!-- SECCIÓN 3: PERSONALIZACIÓN PREMIUM -->
+<section class="glass premium">
+  <h2 class="section-title">Personalización Premium ⭐</h2>
+
+  <div class="price-list">
+    <div class="price-row">🇧🇴 Bolivia <span>13 Bs</span></div>
+    <div class="price-row">🌍 Otros países <span>3.5 USD</span></div>
+  </div>
+
+  <button class="primary-btn">
+    PEDIR PERSONALIZACIÓN
+  </button>
+
+  <h3 class="sub-title">Códigos disponibles</h3>
+
+  <div class="list">
+    <div class="list-item">🌻 Flores amarillas<button onclick="pedir('Flores Moradas 3D')">PEDIR</button></div>
+    <!--
+    <div class="list-item">💖 Corazón de partículas v2 <button onclick="pedir('Corazón partículas v2')">PEDIR</button></div>
+    <div class="list-item">💞 Lluvia de amor <button onclick="pedir('Lluvia de amor')">PEDIR</button></div>
+    <div class="list-item">🚗 Space HotWheels <button onclick="pedir('Space HotWheels')">PEDIR</button></div>
+    <div class="list-item">🚗 HotWheels 3D <button onclick="pedir('HotWheels 3D')">PEDIR</button></div>
+    -->
+  </div>
+</section>
+
+</main>
+
+<script src="particles.js"></script>
+<script>
+function pedir(nombre) {
+  const msg = `Hola JD-CODE, quiero la ${nombre}`;
+  window.open(`https://wa.me/59163614354?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+
+<script>
+document.querySelectorAll('.glass').forEach(card => {
+  card.style.opacity = 0;
+  card.style.transform = 'translateY(30px)';
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.transition = 'all .6s ease';
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.glass').forEach(card => observer.observe(card));
+</script>
+
+
+</body>
+</html>

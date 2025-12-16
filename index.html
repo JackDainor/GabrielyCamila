@@ -1,102 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="estilos.css">
-	<title>Gabriel_Y_Camila</title>
+  <meta charset="UTF-8">
+  <title>JD-CODE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style-home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  
-  <!-- Boton en la pantalla  -->
-  
-    <div id="button-container">
-      
-        <button id="click-button">sube tu volumen y Haz clic aquí</button>
-    </div>
 
-    <div id="main-content">
+<canvas id="particles"></canvas>
 
-  <!-- Pantalla principal-->
+<header class="top-bar">
+  <div class="left-actions">
+    <button class="icon-btn active">🏠</button>
+    <button class="icon-btn" onclick="location.href='catalogo.html'">🛒</button>
+    <button class="icon-btn" onclick="location.href='personalizar.html'">🎨</button>
+  </div>
+  <h1 class="logo">JD-CODE</h1>
+</header>
 
-	<div>
-	  <h1><span><br></span> ¡MI AMOR!</h1>
-	  <p>¡GESIEL!<br>
+<!-- HERO / PRESENTACIÓN -->
+<section class="hero">
+  <h2>TU UNIVERSO DE<br><span>CÓDIGOS CREATIVOS</span></h2>
+  <p>
+    Bienvenido a JD-CODE, el espacio donde las ideas cobran vida.
+    Explora, personaliza y descarga códigos de diseño web para esa personita especial.
+  </p>
+</section>
 
-	    <a href="felicitaciones.html">Has click aqui amor</a>
-	  </p>
-	</div>
+<!-- DESTACADOS -->
+<section class="destacados">
+  <h3>⭐ Productos Destacados</h3>
 
-	<!-- Script Librería ScrollReveal.js -->
-	<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  <div class="products" id="featured-products"></div>
 
-	<!-- Script jQuery -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <button class="ver-catalogo" onclick="location.href='catalogo.html'">
+    Ver todo el catálogo
+  </button>
+</section>
 
-	<!-- Script Librería Fireworks.js -->
-	<script src="script.js"></script>
-
-	<!-- Script Configuración Fireworks.js -->
-	<script>
-	  $('div').fireworks({
-	    opacity: 0.9,
-	    width: '100%',
-	    height: '100%'
-	  });
-	</script>
-
-	<!-- Scripts Configuración ScrollReveal.js -->
-	<script>
-	  ScrollReveal().reveal('h1', {
-	    delay: 2000,
-	    duration: 2000,
-	    distance: '400%',
-	    origin: 'top',
-	    opacity: null
-	  });
-
-	  ScrollReveal().reveal('p', {
-	    delay: 3000,
-	    duration: 3000,
-	    distance: '400%',
-	    origin: 'bottom',
-	    opacity: null
-	  });
-	</script>
-
-  <!-- musica de fondo -->
-	
-	<audio loop id="miMusica" src="musica2.mp3" preload="auto"></audio>
-
-	<script>
-	  // Función para reproducir música
-	  function reproducirMusica() {
-	    const musica = document.getElementById('miMusica');
-	    musica.play();
-	  }
-
-	  // Escuchar el primer clic en el documento
-	  document.addEventListener('click', () => {
-	    reproducirMusica();
-	    // Eliminar el oyente para evitar múltiples llamadas
-	    document.removeEventListener('click', arguments.callee);
-	  });
-	</script>
-	
-<!-- fin de la pantalla principal -->
-
-</div>
-
-    <script>
-        const button = document.getElementById('click-button');
-        const mainContent = document.getElementById('main-content');
-        const buttonContainer = document.getElementById('button-container');
-
-        button.addEventListener('click', function() {
-            buttonContainer.style.display = 'none'; // Ocultar el botón
-            mainContent.style.display = 'block'; // Mostrar el contenido principal
-        });
-    </script>
-
+<script src="script-home.js"></script>
 </body>
 </html>

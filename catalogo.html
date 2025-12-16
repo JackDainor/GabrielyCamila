@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>JD-CODE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
+
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<header class="top-bar">
+  <div class="left-actions">
+    <button class="icon-btn" onclick="location.href='index.html'">🏠</button>
+    <button class="icon-btn active" onclick="location.href='catalogo.html'">🛒</button>
+    <button class="icon-btn" onclick="location.href='personalizar.html'">🎨</button>
+  </div>
+  <h1 class="logo">JD-CODE</h1>
+</header>
+
+ <main class="products" id="products"></main>
+
+<!-- MODAL -->
+<div class="modal hidden" id="modal">
+  <div class="modal-content">
+    
+    <!-- BOTÓN CERRAR -->
+    <span class="close" id="closeModal">✕</span>
+
+    <h2>¿Eres de Bolivia?</h2>
+
+    <button id="btnBolivia"></button>
+
+    <p>Otros países</p>
+
+    <button id="btnUsd"></button>
+  </div>
+</div>
+
+
+<footer>
+  <a href="https://wa.me/59163614354" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="#" target="_blank">
+    <i class="fab fa-tiktok"></i>
+  </a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

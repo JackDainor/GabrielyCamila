@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "nombre": "Para tí ❤️✨",
+    "descripcion": " amimacion en imágenes y corazones al tocar la pantalla ❤️",
+    "imagen": "img/img1.webp",
+    "precio_bs": 5,
+    "precio_usd": 1.5,
+    "url": "https://jd-code.github.io/catalogo/corazon-particulas.html",
+    "premium": false
+
+  },
+  {
+    "id": 2,
+    "nombre": "Carta, mensaje especial ❤️",
+    "descripcion": "Carta con animacion de entrada y salida, expresa tus sentimientos a través de una carta ❤️❤️✨",
+    "imagen": "img/carta.webp",
+    "precio_bs": 5,
+    "precio_usd": 1.5,
+    "premium": false
+  },
+  {
+    "id": 3,
+    "nombre": "Press Heart ❤️",
+    "descripcion": "Toca el corazon para sacar un mensaje especial, musica incluido ❤️🎵",
+    "precio_bs": 5,
+    "precio_usd": 1.5,
+    "premium": false,
+    "imagen": "img/pressheart.webp"
+  },
+  {
+    "id": 4,
+    "nombre": "Lluvia de Te Amo ❤️",
+    "descripcion": "Lluvia de Te Amo y explocion al tocar la pantalla ❤️✨",
+    "precio_bs": 5,
+    "precio_usd": 1.5,
+    "premium": false,
+    "imagen": "img/lluviateamo.webp"
+  },
+  {
+    "id": 5,
+    "nombre": "Flores amarillas 🌻🌻",
+    "descripcion": "Flores amarillas para esa personita especial 🌻✨❤️",
+    "precio_bs": 7,
+    "precio_usd": 1.7,
+    "premium": true,
+    "imagen": "img/floresamarillas.webp"
+  }
+  
+]

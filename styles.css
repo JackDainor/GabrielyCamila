@@ -1,0 +1,451 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0b0f1a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+/* =====================
+   VARIABLES JD-CODE
+===================== */
+:root {
+  --bg-dark: #0b0b14;
+  --glass: rgba(255, 255, 255, 0.06);
+  --border-glass: rgba(180, 100, 255, 0.35);
+  --purple: #a855f7;
+  --pink: #ec4899;
+  --neon: 0 0 15px rgba(168,85,247,.6);
+}
+
+
+/* =====================
+   HEADER
+===================== */
+.top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 65px;
+  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.logo {
+  font-size: 1.3rem;
+  color: var(--purple);
+  text-shadow: var(--neon);
+}
+
+.left-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--glass);
+  border: 1px solid var(--border-glass);
+  color: white;
+  font-size: 18px;
+}
+
+.icon-btn.active {
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+}
+
+.icons button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  margin-right: 10px;
+  background: #1a1f35;
+  color: #fff;
+  cursor: pointer;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.ver { background: #00bcd4; }
+.copiar { background: #673ab7; color:#fff; }
+.comprar { background: #4caf50; color:#fff; }
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+
+footer {
+  text-align: center;
+  padding: 15px;
+}
+
+footer a {
+  color: #fff;
+  font-size: 25px;
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.product:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(0,229,255,0.25);
+}
+
+.badge-premium {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #ffd700, #ffb300);
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255,215,0,0.8);
+  animation: glow 1.5s infinite alternate;
+  z-index: 2;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px rgba(255,215,0,0.5); }
+  to   { box-shadow: 0 0 20px rgba(255,215,0,1); }
+}
+
+.product img {
+  border-radius: 14px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.product:hover img {
+  transform: scale(1.03);
+}
+
+.buttons button {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.ver {
+  background: linear-gradient(135deg, #00bcd4, #00e5ff);
+}
+
+.copiar {
+  background: linear-gradient(135deg, #673ab7, #9575cd);
+}
+
+.comprar {
+  background: linear-gradient(135deg, #00c853, #64dd17);
+}
+
+.buttons button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+}
+
+.personalizar {
+  background: linear-gradient(135deg, #ff9800, #ffc107);
+  color: #000;
+}
+
+.personalizar:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   VARIABLES PREMIUM
+========================= */
+:root {
+  --bg: #050b14;
+  --card: #0c1627;
+  --neon: #00e5ff;
+  --neon-soft: rgba(0,229,255,.3);
+  --text: #eaf6ff;
+  --muted: #9bb3c7;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* =========================
+   PRODUCTOS
+========================= */
+.product {
+  position: relative;
+  background: linear-gradient(145deg, #0c1627, #060d1a);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 0 0 transparent;
+  transition: all .4s ease;
+}
+
+.product:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 0 25px var(--neon-soft),
+    inset 0 0 20px rgba(255,255,255,.02);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   TEXTO
+========================= */
+.product h3 {
+  margin: 8px 0 6px;
+  font-size: 1.05rem;
+}
+
+.product p {
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+/* =========================
+   BOTONES
+========================= */
+.buttons {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.buttons button {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--neon-soft);
+  background: transparent;
+  color: var(--text);
+  font-size: .85rem;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.buttons button:hover {
+  background: var(--neon);
+  color: #00131a;
+  box-shadow: 0 0 15px var(--neon);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   BADGE PREMIUM 👑
+========================= */
+.badge-premium {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(45deg, gold, orange);
+  color: #000;
+  font-size: .7rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px gold; }
+  50% { box-shadow: 0 0 20px gold; }
+  100% { box-shadow: 0 0 5px gold; }
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  backdrop-filter: blur(8px);
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 340px;
+  background: linear-gradient(160deg, #0c1627, #050b14);
+  border-radius: 22px;
+  padding: 22px;
+  text-align: center;
+  animation: modalIn .45s ease;
+  box-shadow:
+    0 0 35px var(--neon-soft),
+    inset 0 0 20px rgba(255,255,255,.04);
+}
+
+@keyframes modalIn {
+  from {
+    transform: scale(.7) translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content h2 {
+  margin-bottom: 14px;
+  font-size: 1.2rem;
+}
+
+.modal-content p {
+  margin: 14px 0 8px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* =========================
+   BOTONES MODAL
+========================= */
+.modal-content button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  border-radius: 14px;
+  border: none;
+  font-size: .9rem;
+  font-weight: 600;
+  background: linear-gradient(45deg, #00e5ff, #00bcd4);
+  color: #00222c;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.modal-content button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px var(--neon);
+}
+
+/* =========================
+   CERRAR MODAL
+========================= */
+.close {
+  position: relative;
+  top: 14px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #9bb3c7;
+  cursor: pointer;
+  transition: all .3s ease;
+  z-index: 99;
+}
+
+.close:hover {
+  background: #00e5ff;
+  color: #00131a;
+  box-shadow: 0 0 15px #00e5ff;
+  transform: rotate(90deg);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (min-width: 768px) {
+  #products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
